@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ArticleUpdateDateTime extends Model
 {
-    protected $fillable = ['datetime'];
+    protected $fillable = ['article_id', 'datetime'];
 
     public function article()
     {
