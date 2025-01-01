@@ -52,7 +52,7 @@ class ArticleController extends Controller
         if ($updateCountToday >= 2) {
             return response()->json([
                 'message' => '1日の更新回数の上限(2回)に達しています。'
-            ], 403);
+            ], 429);
         }
 
         // --- 5) バリデーション (FormRequest不使用で直接書く) ---
@@ -65,7 +65,7 @@ class ArticleController extends Controller
             return response()->json([
                 'message' => '入力エラーがあります。',
                 'errors'  => $validator->errors()
-            ], 400);
+            ], 422);
         }
 
         // バリデーション済みデータの取得
