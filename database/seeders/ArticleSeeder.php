@@ -14,7 +14,7 @@ class ArticleSeeder extends Seeder
      */
     public function run(): void
     {
-        // factoryはなしで生成
+        // 投稿1
         Article::create([
             'user_id' => 1,
             'title' => 'テスト投稿',
@@ -23,6 +23,18 @@ class ArticleSeeder extends Seeder
 
         ArticleStoreDateTime::create([
             'article_id' => 1,
+            'datetime' => now(),
+        ]);
+
+        // 投稿2
+        Article::create([
+            'user_id' => 2,
+            'title' => 'テスト投稿2',
+            'content' => 'これはテスト投稿2です。',
+        ]);
+
+        ArticleStoreDateTime::create([
+            'article_id' => 2,
             'datetime' => now(),
         ]);
     }
